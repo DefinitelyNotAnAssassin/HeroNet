@@ -68,6 +68,13 @@
                 android:layout_marginTop="10dp"
                 android:text="Sign In"
                 />
+            <TextView
+                android:id="@+id/NGOSignInLink"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp"
+                android:text="NGO Sign In"
+                android:textAlignment="center"/>
         </LinearLayout>
 
 

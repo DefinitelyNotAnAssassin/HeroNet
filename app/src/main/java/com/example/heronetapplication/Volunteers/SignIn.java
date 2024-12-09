@@ -8,9 +8,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.heronetapplication.NGO.NGOView;
+import com.example.heronetapplication.NGO.SignUp;
 import com.example.heronetapplication.ObjectTypes.NGO;
 import com.example.heronetapplication.ObjectTypes.Users;
 import com.example.heronetapplication.R;
@@ -77,6 +79,17 @@ public class SignIn extends Fragment {
         signInButton = v.findViewById(R.id.signInBtn);
 
         signInButton.setOnClickListener(this::SignInUser);
+
+
+        TextView NGOSignInLink = v.findViewById(R.id.NGOSignInLink);
+
+        NGOSignInLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new com.example.heronetapplication.NGO.SignIn();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mainFragmentContainer, fragment).commit();
+            }
+        });
         return v;
     }
 
