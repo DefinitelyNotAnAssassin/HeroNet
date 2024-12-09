@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/ngoHomeTab"
+        android:enabled="true"
+        android:icon="@drawable/home"
+        android:title="Home"/>
+    <item
+        android:id="@+id/ngoEventsTab"
+        android:icon="@drawable/events"
+        android:title="Events"/>
+
+    <item
+        android:id="@+id/ngoCreateEventTab"
+        android:icon="@drawable/events"
+        android:title="Create Events"/>
+
+    <item
+        android:id="@+id/ngoProfileTab"
+        android:icon="@drawable/profile"
+        android:title="Profile"/>
+</menu>
