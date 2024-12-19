@@ -15,7 +15,7 @@ public class Users{
         this.skillLevel = skillLevel;
     }
 
-    public HashMap<String, Object> getUserInfo(){
+    public static HashMap<String, Object> getUserInfo(){
         HashMap<String, Object> userInfo = new HashMap<>();
         userInfo.put("FirstName", firstName);
         userInfo.put("LastName", lastName);

@@ -7,7 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentContainerView;
 
-import com.example.heronetapplication.NGO.SignIn;
+import com.example.heronetapplication.Volunteers.SignIn;
+import com.example.heronetapplication.Volunteers.SignUp;
 import com.example.heronetapplication.Volunteers.VolunteerView;
 
 public class MainActivity extends AppCompatActivity {

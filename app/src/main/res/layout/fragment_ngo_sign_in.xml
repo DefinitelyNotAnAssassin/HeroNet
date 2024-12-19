@@ -69,6 +69,13 @@
                 android:layout_marginTop="10dp"
                 android:text="Sign In"
                 />
+            <TextView
+                android:id="@+id/volunteerSignInLink"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp"
+                android:text="Volunteers Sign In"
+                android:textAlignment="center"/>
         </LinearLayout>
 
 

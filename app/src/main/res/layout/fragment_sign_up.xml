@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
 
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
->
+    android:layout_height="match_parent">
 
 
     <LinearLayout
@@ -110,7 +109,6 @@
 
 
 
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/signUpOccupationTextField"
             android:layout_width="match_parent"
@@ -145,11 +143,10 @@
                 />
 
 
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Skill 1"
+                android:text="Rate your CPR skills (1 = Beginner, 5 = Expert)"
                 android:paddingVertical="8dp"/>
 
             <RadioGroup
@@ -187,7 +184,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Skill 2"
+                android:text="Rate your knowledge of treating burns (1 = Beginner, 5 = Expert)"
                 android:paddingVertical="8dp"/>
 
             <RadioGroup
@@ -220,6 +217,67 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="5" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rate your knowledge of controlling bleeding (1 = Beginner, 5 = Expert)"
+                android:paddingVertical="8dp"/>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Have you ever attended a first aid training session?"
+                android:paddingVertical="8dp"/>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
             </RadioGroup>
 
 
@@ -240,4 +298,4 @@
 
 
 
-</FrameLayout>
+</ScrollView>

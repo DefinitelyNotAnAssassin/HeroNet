@@ -12,7 +12,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.heronetapplication.NGO.NGOView;
-import com.example.heronetapplication.NGO.SignUp;
 import com.example.heronetapplication.ObjectTypes.NGO;
 import com.example.heronetapplication.ObjectTypes.Users;
 import com.example.heronetapplication.R;
@@ -69,6 +68,7 @@ public class SignIn extends Fragment {
 
     TextInputEditText signInEmail, signInPassword;
     Button signInButton;
+    TextView volunteeerSignUpLink;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -87,6 +87,15 @@ public class SignIn extends Fragment {
             @Override
             public void onClick(View v) {
                 Fragment fragment = new com.example.heronetapplication.NGO.SignIn();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mainFragmentContainer, fragment).commit();
+            }
+        });
+
+        volunteeerSignUpLink = v.findViewById(R.id.volunteerSignUpLink);
+        volunteeerSignUpLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new SignUp();
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mainFragmentContainer, fragment).commit();
             }
         });

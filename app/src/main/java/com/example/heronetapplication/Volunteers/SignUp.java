@@ -91,7 +91,9 @@ public class SignUp extends Fragment {
                 String confirmPassword = signUpConfirmPassword.getText().toString();
                 String occupation = signUpOccupation.getText().toString();
                 signUpUser(firstName, lastName, email, password, confirmPassword, occupation, 5.0);
-                Toast.makeText(getContext(), "User Signed Up", Toast.LENGTH_SHORT).show();
+
+
+
             }
         });
 
@@ -113,8 +115,29 @@ public class SignUp extends Fragment {
             Toast.makeText(getContext(), "Passwords do not match", Toast.LENGTH_SHORT).show();
             return;
         }
+        Users.firstName = firstName;
+        Users.lastName = lastName;
+        Users.email = email;
+        Users.password = password;
+        Users.occupation = occupation;
+        Users.skillLevel = rating;
 
-        Users user = new Users(firstName, lastName, email, password, occupation, rating);
-        db.collection("Users").add(user);
+
+
+        db.collection("Users").add(Users.getUserInfo()).addOnCompleteListener(
+                task -> {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(getContext(),"User created successfully", Toast.LENGTH_SHORT).show();
+                        Fragment fragment = new SignIn();
+                        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mainFragmentContainer, fragment).commit();
+
+                    } else {
+                        Toast.makeText(getContext(),"User creation failed", Toast.LENGTH_SHORT).show();
+                    }
+                }
+        );
+
+
+
     }
 }

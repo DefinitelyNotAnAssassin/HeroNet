@@ -63,13 +63,22 @@ public class SignIn extends Fragment {
     }
 
     TextInputEditText email, password;
-    @Override
+    TextView volunteerSignInLink;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v =inflater.inflate(R.layout.fragment_ngo_sign_in, container, false);
         Button signUpBtn = v.findViewById(R.id.ngoSignInBtn);
         email = v.findViewById(R.id.ngoSignInEmailEditText);
         password = v.findViewById(R.id.ngoSignInPasswordEditText);
+        volunteerSignInLink = v.findViewById(R.id.volunteerSignInLink);
+
+        volunteerSignInLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new com.example.heronetapplication.Volunteers.SignIn();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mainFragmentContainer, fragment).commit();
+            }
+        });
 
 
         signUpBtn.setOnClickListener(new View.OnClickListener() {
