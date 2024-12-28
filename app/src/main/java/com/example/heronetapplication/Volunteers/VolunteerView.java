@@ -86,7 +86,7 @@ public class VolunteerView extends Fragment {
                         selectedFragment = new EventFeed();
                     }
                     else if (itemId == R.id.profileTab){
-                        selectedFragment = new HomeFeed();
+                        selectedFragment = new VolunteerProfile();
                     }
                     getChildFragmentManager().beginTransaction().replace(fragmentContainer.getId(), selectedFragment).commit();
                     return true;

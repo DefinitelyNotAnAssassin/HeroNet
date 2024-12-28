@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentContainerView;
 
+import com.example.heronetapplication.NGOHomeFeed;
 import com.example.heronetapplication.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -80,7 +81,7 @@ public class NGOView extends Fragment {
                     Fragment selectedFragment = null;
                     int itemId = item.getItemId();
                     if (itemId == R.id.ngoHomeTab) {
-                        selectedFragment = new HomeFeed();
+                        selectedFragment = new NGOHomeFeed();
                     } else if (itemId == R.id.ngoEventsTab) {
                         selectedFragment = new EventFeed();
                     }

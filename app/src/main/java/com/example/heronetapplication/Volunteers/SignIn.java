@@ -116,10 +116,11 @@ public class SignIn extends Fragment {
                     // user exists
                     // navigate to home feed
                     Users.id = task.getResult().getDocuments().get(0).getId();
-                    Users.occupation = task.getResult().getDocuments().get(0).getString("occupation");
-                    Users.email = task.getResult().getDocuments().get(0).getString("email");
+                    Users.occupation = task.getResult().getDocuments().get(0).getString("Occupation");
+                    Users.email = task.getResult().getDocuments().get(0).getString("Email");
                     Users.firstName = task.getResult().getDocuments().get(0).getString("FirstName");
                     Users.lastName = task.getResult().getDocuments().get(0).getString("LastName");
+
 
                     Fragment fragment = new VolunteerView();
                     getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mainFragmentContainer, fragment).commit();

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NGO.NGOProfile">
+    tools:context=".Volunteers.VolunteerProfile">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,12 +21,12 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="NGO Dashboard"
+                android:text="HeroNet"
                 android:textSize="20dp" />
 
             <Button
                 style="?attr/materialIconButtonStyle"
-                android:id="@+id/ngoIconButton"
+                android:id="@+id/iconButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:icon="@drawable/profile" />
@@ -34,22 +34,31 @@
 
         <com.google.android.material.tabs.TabLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            >
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="NGO Profile" />
+                android:text="My Profile"
+                />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="My Events" />
+                android:text="My Events"
+                />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Settings" />
+                android:text="History"
+                />
+
+
+
+
+
         </com.google.android.material.tabs.TabLayout>
 
         <LinearLayout
@@ -57,6 +66,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:gravity="center"
+
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
@@ -74,105 +84,114 @@
                     android:layout_gravity="center">
 
                     <ImageView
-                        android:id="@+id/profileNGOImage"
+                        android:id="@+id/profileVolunteerImage"
                         android:layout_width="150dp"
                         android:layout_height="150dp"
                         android:src="@drawable/placeholder"
                         android:scaleType="centerCrop"/>
+
                 </androidx.cardview.widget.CardView>
+
             </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/profileNGOName"
+                android:id="@+id/profileVolunteerName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:text="NGO Name">
+                android:text="Volunteer Name">
             </TextView>
 
             <TextView
-                android:id="@+id/profileNGORole"
+                android:id="@+id/profileVolunteerOccupation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Role">
+                android:text="Occupation">
             </TextView>
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:orientation="vertical">
 
-            <com.google.android.material.textfield.TextInputLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Description">
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/ngoDescription"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/firstNameTextField"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="An NGO description...."
-                    android:inputType="textMultiLine" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:hint="First Name">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Email">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/profileFirstName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/ngoEmail"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/lastNameTextField"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="1"
-                    android:inputType="textEmailAddress" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:hint="Last Name">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Name">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/profileLastName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/ngoName"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/profileEmailTextField"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Non Government Organization"
-                    android:inputType="textPersonName" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:hint="Email">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Password">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/profileEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/ngoPassword"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/occupationTextField"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="1"
-                    android:inputType="textPassword" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:hint="Occupation">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/profileNGOEditButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Edit"
-                android:layout_marginTop="16dp" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/profileOccupation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/profileNGOSaveButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Save"
-                android:layout_marginTop="16dp"
-                android:visibility="gone" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/profileEditButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Edit"
+                    android:layout_marginTop="16dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/profileSaveButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Save"
+                    android:layout_marginTop="16dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
         </LinearLayout>
 
 
-
     </LinearLayout>
+
 </ScrollView>

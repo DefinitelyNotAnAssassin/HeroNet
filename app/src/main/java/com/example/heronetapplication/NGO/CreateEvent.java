@@ -12,10 +12,14 @@ import android.widget.Toast;
 
 import com.example.heronetapplication.ObjectTypes.NGO;
 import com.example.heronetapplication.R;
+import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 import java.util.Map;
 
 /**
@@ -77,7 +81,12 @@ public class CreateEvent extends Fragment {
         eventDescription = v.findViewById(R.id.eventDescription);
         eventLocation = v.findViewById(R.id.eventLocation);
         eventDate = v.findViewById(R.id.eventDate);
-        eventDuration = v.findViewById(R.id.eventDuration);
+        eventDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDatePicker();
+            }
+        });        eventDuration = v.findViewById(R.id.eventDuration);
 
         submitEventButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,6 +102,22 @@ public class CreateEvent extends Fragment {
         });
         return v;
     }
+
+    private void showDatePicker() {
+        MaterialDatePicker<Long> datePicker = MaterialDatePicker.Builder.datePicker()
+                .setTitleText("Select Event Date")
+                .build();
+
+        datePicker.show(getParentFragmentManager(), "MATERIAL_DATE_PICKER");
+
+        datePicker.addOnPositiveButtonClickListener(selection -> {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+            String date = sdf.format(new Date(selection));
+            eventDate.setText(date);
+        });
+    }
+
+
 
     public void createEvent(String eventName, String eventDescription, String eventLocation, String eventDate, String eventDuration) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();

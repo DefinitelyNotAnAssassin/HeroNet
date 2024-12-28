@@ -107,6 +107,7 @@ public class SignIn extends Fragment {
                     NGO.NGODescription = task.getResult().getDocuments().get(0).getString("description");
                     NGO.NGOName = task.getResult().getDocuments().get(0).getString("name");
                     NGO.NGOId = task.getResult().getDocuments().get(0).getId();
+                    NGO.password = password;
                     Fragment fragment = new NGOView();
                     getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mainFragmentContainer, fragment).commit();
                 } else {
