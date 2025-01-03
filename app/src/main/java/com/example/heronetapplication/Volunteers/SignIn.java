@@ -99,6 +99,9 @@ public class SignIn extends Fragment {
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mainFragmentContainer, fragment).commit();
             }
         });
+
+
+
         return v;
     }
 
@@ -115,6 +118,14 @@ public class SignIn extends Fragment {
                 if (task.getResult().getDocuments().size() > 0) {
                     // user exists
                     // navigate to home feed
+
+
+
+                    // Users user1 = new Users();
+
+                    // Users.firstname, Users.....,
+
+
                     Users.id = task.getResult().getDocuments().get(0).getId();
                     Users.occupation = task.getResult().getDocuments().get(0).getString("Occupation");
                     Users.email = task.getResult().getDocuments().get(0).getString("Email");

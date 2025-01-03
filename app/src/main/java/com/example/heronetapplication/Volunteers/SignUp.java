@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.heronetapplication.ObjectTypes.Users;
@@ -67,6 +68,7 @@ public class SignUp extends Fragment {
 
     TextInputEditText signUpFirstName, signUpLastName, signUpEmail, signUpPassword, signUpConfirmPassword, signUpOccupation;
     Button signUpBtn;
+    TextView volunteerLoginLink;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -97,6 +99,15 @@ public class SignUp extends Fragment {
             }
         });
 
+
+        volunteerLoginLink = v.findViewById(R.id.volunteerLoginLink);
+        volunteerLoginLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new SignIn();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mainFragmentContainer, fragment).commit();
+            }
+        });
 
         return v;
     }

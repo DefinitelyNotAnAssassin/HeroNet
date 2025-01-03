@@ -63,7 +63,7 @@ public class SignIn extends Fragment {
     }
 
     TextInputEditText email, password;
-    TextView volunteerSignInLink;
+    TextView volunteerSignInLink, ngoSignUpLink;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v =inflater.inflate(R.layout.fragment_ngo_sign_in, container, false);
@@ -88,6 +88,15 @@ public class SignIn extends Fragment {
             }
         });
 
+        ngoSignUpLink = v.findViewById(R.id.ngoSignUpLink);
+        ngoSignUpLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new NGOSignUp();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mainFragmentContainer, fragment).commit();
+            }
+        });
+
 
 
 
@@ -98,7 +107,7 @@ public class SignIn extends Fragment {
     public void signInUser(String email, String password){
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        db.collection("NGOs").whereEqualTo("email", email).whereEqualTo("password", password).get().addOnCompleteListener(task -> {
+        db.collection("NGOs").whereEqualTo("Email", email).whereEqualTo("Password", password).get().addOnCompleteListener(task -> {
             if(task.isSuccessful()) {
                 if (task.getResult().getDocuments().size() > 0) {
                     // user exists
