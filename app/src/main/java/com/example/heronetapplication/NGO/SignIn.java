@@ -113,8 +113,8 @@ public class SignIn extends Fragment {
                     // user exists
                     // navigate to home feed
                     NGO.email = email;
-                    NGO.NGODescription = task.getResult().getDocuments().get(0).getString("description");
-                    NGO.NGOName = task.getResult().getDocuments().get(0).getString("name");
+                    NGO.NGODescription = task.getResult().getDocuments().get(0).getString("Description");
+                    NGO.NGOName = task.getResult().getDocuments().get(0).getString("Name");
                     NGO.NGOId = task.getResult().getDocuments().get(0).getId();
                     NGO.password = password;
                     Fragment fragment = new NGOView();
